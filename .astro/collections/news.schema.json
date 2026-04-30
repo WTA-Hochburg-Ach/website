@@ -1,0 +1,97 @@
+{
+  "$ref": "#/definitions/news",
+  "definitions": {
+    "news": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
+        "endDate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
+        "preview": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "news",
+            "event"
+          ],
+          "default": "news"
+        },
+        "location": {
+          "type": "string"
+        },
+        "display": {
+          "type": "string",
+          "enum": [
+            "modal",
+            "page"
+          ],
+          "default": "page"
+        },
+        "color": {
+          "type": "string",
+          "enum": [
+            "moss",
+            "sage",
+            "gold"
+          ],
+          "default": "moss"
+        },
+        "pdfs": {
+          "type": "object",
+          "properties": {
+            "de": {
+              "type": "string"
+            },
+            "en": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "date"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
