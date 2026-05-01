@@ -8,6 +8,8 @@ import {
   venue,
 } from '../data/site';
 
+import { Icon } from "astro-icon/components";
+
 const baseUrl = import.meta.env.BASE_URL || '/';
 const currentYear = new Date().getFullYear();
 const withBase = (path = '') => `${baseUrl}${path}`;
@@ -37,7 +39,7 @@ const footerLabelFallbacks = {
             {section.items.map((item) => (
               <li>
                 <a href={withBase(item.href)} data-i18n={item.labelKey}>
-                  {footerLabelFallbacks[item.labelKey]}
+                  {footerLabelFallbacks[item.labelKey as keyof typeof footerLabelFallbacks]}
                 </a>
               </li>
             ))}
@@ -80,10 +82,10 @@ const footerLabelFallbacks = {
             <a
               href={item.href}
               aria-label={item.label}
-              target={item.href.startsWith('http') ? '_blank' : undefined}
-              rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              target={item.external || item.href.startsWith('http') ? '_blank' : undefined}
+              rel={item.external || item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
             >
-              {item.label}
+              <Icon name={item.icon} size="24" />
             </a>
           ))}
         </div>
@@ -100,3 +102,25 @@ const footerLabelFallbacks = {
     <p class="footer-tagline" data-i18n="footer.tagline">Aikido - der Weg der Harmonie</p>
   </div>
 </footer>
+
+
+<style>
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.footer-social svg {
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.footer-social a:hover svg {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+</style>

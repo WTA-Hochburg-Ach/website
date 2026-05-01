@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import icon from 'astro-icon';
 
 export default defineConfig({
   output: 'static',
@@ -6,5 +7,6 @@ export default defineConfig({
   trailingSlash: 'never',
   build: {
     format: 'file'
-  }
+  },
+  integrations: [icon()], // 🔥 DAS IST DER FIX
 });

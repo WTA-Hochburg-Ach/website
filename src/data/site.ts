@@ -179,21 +179,29 @@ export const footerSocialLinks = [
   {
     label: 'E-Mail',
     href: `mailto:${contactData.email}`,
+    icon: 'lucide:mail',
   },
   {
     label: 'Telefon',
     href: contactData.phone.href,
+    icon: 'lucide:phone',
   },
   {
     label: 'Instagram',
     href: contactData.socialinstagram.href,
+    icon: 'lucide:instagram',
+    external: true,
   },
   {
     label: 'Facebook',
     href: contactData.socialfacebook.href,
+    icon: 'lucide:facebook',
+    external: true,
   },
   {
     label: 'Google Maps',
     href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue.mapQuery)}`,
+    icon: 'lucide:map-pin',
+    external: true,
   },
 ];
