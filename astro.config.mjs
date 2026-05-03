@@ -8,5 +8,9 @@ export default defineConfig({
   build: {
     format: 'file'
   },
-  integrations: [icon()], // 🔥 DAS IST DER FIX
+  integrations: [icon({
+    include: {
+      lucide: ['*']
+    }
+  })], // 🔥 DAS IST DER FIX
 });

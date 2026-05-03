@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { formatDateRange } from '../../lib/news';
 
 type NewsPageProps = {
@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props as NewsPageProps;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 const baseUrl = import.meta.env.BASE_URL || '/';
 ---
 

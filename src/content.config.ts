@@ -2,7 +2,11 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const pages = defineCollection({
-  loader: glob({ pattern: 'pages/*.md', base: 'src/content' }),
+  loader: glob({ 
+    pattern: '*.md', 
+    base: 'src/content/pages',
+    transform: (data) => ({ ...data, slug: data.id.replace(/\.md$/, '') })
+  }),
   schema: z.object({
     title: z.string(),
     order: z.number(),
@@ -11,9 +15,9 @@ const pages = defineCollection({
 
 const news = defineCollection({
   loader: glob({ 
-    pattern: 'news/**/*.md', 
-    base: 'src/content',
-    transform: (data) => ({ ...data, slug: data.id.replace(/^news\//, '').replace(/\.md$/, '') })
+    pattern: '**/*.md', 
+    base: 'src/content/news',
+    transform: (data) => ({ ...data, slug: data.id.replace(/\.md$/, '') })
   }),
   schema: z.object({
     title: z.string(),
