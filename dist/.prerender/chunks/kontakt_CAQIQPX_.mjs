@@ -1,0 +1,27 @@
+import { c as createComponent } from './astro-component_Cto3ZtAx.mjs';
+import 'piccolore';
+import { r as renderComponent, a as renderTemplate, m as maybeRenderHead, b as addAttribute, F as Fragment } from './prerender_Dg6aT-fc.mjs';
+import { $ as $$BaseLayout, c as contactData, v as venue, b as boardMembers } from './BaseLayout_ZwrM1XnB.mjs';
+
+const $$Kontakt = createComponent(($$result, $$props, $$slots) => {
+  const pageTitle = "Kontakt";
+  const pageDescription = "Kontakt, Ansprechpartner und Anfahrt von Wanomichi Takemusu Aikido Hochburg-Ach.";
+  const googleMapsEmbed = `https://www.google.com/maps?q=${encodeURIComponent(venue.mapQuery)}&z=15&output=embed`;
+  const googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue.mapQuery)}`;
+  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "title": pageTitle, "description": pageDescription, "data-astro-cid-d7zyz6zb": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="contact-shell" data-astro-cid-d7zyz6zb> <header class="page-header" data-astro-cid-d7zyz6zb> <h1 data-astro-cid-d7zyz6zb>Kontakt</h1> <p class="lead" data-astro-cid-d7zyz6zb>Fragen zum Training, Verein oder zu kommenden Terminen? Wir freuen uns auf deine Nachricht.</p> </header> <section class="content-block-spacious" data-astro-cid-d7zyz6zb> <h2 data-astro-cid-d7zyz6zb>Direkter Kontakt</h2> <div class="contact-grid" data-astro-cid-d7zyz6zb> <article class="contact-card" data-astro-cid-d7zyz6zb> <div class="contact-icon" data-astro-cid-d7zyz6zb>Mail</div> <h3 data-astro-cid-d7zyz6zb>E-Mail</h3> <a${addAttribute(`mailto:${contactData.email}`, "href")} class="contact-link" data-astro-cid-d7zyz6zb>${contactData.email}</a> </article> <article class="contact-card" data-astro-cid-d7zyz6zb> <div class="contact-icon" data-astro-cid-d7zyz6zb>Tel</div> <h3 data-astro-cid-d7zyz6zb>Telefon</h3> <a${addAttribute(contactData.phone.href, "href")} class="contact-link" data-astro-cid-d7zyz6zb>${contactData.phone.compact}</a> </article> <article class="contact-card" data-astro-cid-d7zyz6zb> <div class="contact-icon" data-astro-cid-d7zyz6zb>Ort</div> <h3 data-astro-cid-d7zyz6zb>Trainingsort</h3> <p data-astro-cid-d7zyz6zb>${venue.name}<br data-astro-cid-d7zyz6zb>${venue.street}<br data-astro-cid-d7zyz6zb>${venue.postalCode} ${venue.city}</p> </article> </div> </section> <section class="content-block-spacious" data-astro-cid-d7zyz6zb> <h2 data-astro-cid-d7zyz6zb>Ansprechpartner</h2> <div class="contact-grid" data-astro-cid-d7zyz6zb> ${boardMembers.map((person) => renderTemplate`<article class="contact-card person-card" data-astro-cid-d7zyz6zb> <h3 data-astro-cid-d7zyz6zb>${person.name}</h3> <p class="contact-role" data-astro-cid-d7zyz6zb>${person.role}</p> <p data-astro-cid-d7zyz6zb>${person.street}<br data-astro-cid-d7zyz6zb>${person.cityLine}<br data-astro-cid-d7zyz6zb>${person.country}</p> <a${addAttribute(person.phoneHref, "href")}${addAttribute(["contact-link", person.splitPhone && "split-phone"], "class:list")} data-astro-cid-d7zyz6zb> ${person.splitPhone ? renderTemplate`${renderComponent($$result2, "Fragment", Fragment, { "data-astro-cid-d7zyz6zb": true }, { "default": ($$result3) => renderTemplate` <span data-astro-cid-d7zyz6zb>${contactData.phone.split[0]}</span> <span data-astro-cid-d7zyz6zb>${contactData.phone.split[1]}</span> ` })}` : person.phoneLabel} </a> <a${addAttribute(`mailto:${person.email}`, "href")} class="contact-link" data-astro-cid-d7zyz6zb>${person.email}</a> </article>`)} </div> </section> <section class="content-block-spacious" data-astro-cid-d7zyz6zb> <h2 data-astro-cid-d7zyz6zb>Google Maps</h2> <div class="map-panel" data-astro-cid-d7zyz6zb> <div class="map-copy" data-astro-cid-d7zyz6zb> <h3 data-astro-cid-d7zyz6zb>${venue.name}</h3> <p data-astro-cid-d7zyz6zb>Die Halle liegt in Duttendorf in der Gemeinde Hochburg-Ach. Ueber Google Maps kannst du die Route direkt oeffnen.</p> <p data-astro-cid-d7zyz6zb><a${addAttribute(googleMapsLink, "href")} target="_blank" rel="noopener noreferrer" class="button button-primary" data-astro-cid-d7zyz6zb>In Google Maps oeffnen</a></p> </div> <div class="map-frame" data-astro-cid-d7zyz6zb> <iframe${addAttribute(googleMapsEmbed, "src")} width="100%" height="360" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps Standort" data-astro-cid-d7zyz6zb>
+          </iframe> </div> </div> </section> <section class="content-block-spacious closing-panel" data-astro-cid-d7zyz6zb> <h2 data-astro-cid-d7zyz6zb>Schreib uns</h2> <p data-astro-cid-d7zyz6zb>Wenn du bei einem Training vorbeischauen oder Fragen zu Lehrgaengen hast, melde dich einfach direkt per E-Mail.</p> <p data-astro-cid-d7zyz6zb><a${addAttribute(`mailto:${contactData.email}`, "href")} class="button button-primary" data-astro-cid-d7zyz6zb>${contactData.email}</a></p> </section> </div> ` })}`;
+}, "C:/Users/felix/OneDrive/Data/WTA Hochburg Ach/Github/WTA-Hochburg-Ach/src/pages/kontakt.astro", void 0);
+
+const $$file = "C:/Users/felix/OneDrive/Data/WTA Hochburg Ach/Github/WTA-Hochburg-Ach/src/pages/kontakt.astro";
+const $$url = "/kontakt.html";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$Kontakt,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

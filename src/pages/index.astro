@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, getEntryBySlug } from 'astro:content';
 
-const pages = await getCollection('pages');
-const page = pages.find(p => p.slug === 'index');
+const page =
+  (await getEntryBySlug('pages', 'index')) ??
+  (await getCollection('pages')).find(p => p.slug === 'index' || p.slug === '');
 
 if (!page) {
   throw new Error('Index page not found');

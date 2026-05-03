@@ -1,97 +1,66 @@
 {
-  "$ref": "#/definitions/news",
-  "definitions": {
-    "news": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "preview": {
+      "type": "string"
+    },
+    "type": {
+      "default": "news",
+      "type": "string",
+      "enum": [
+        "news",
+        "event"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "display": {
+      "default": "page",
+      "type": "string",
+      "enum": [
+        "modal",
+        "page"
+      ]
+    },
+    "color": {
+      "default": "moss",
+      "type": "string",
+      "enum": [
+        "moss",
+        "sage",
+        "gold"
+      ]
+    },
+    "pdfs": {
       "type": "object",
       "properties": {
-        "title": {
+        "de": {
           "type": "string"
         },
-        "date": {
-          "anyOf": [
-            {
-              "type": "string",
-              "format": "date-time"
-            },
-            {
-              "type": "string",
-              "format": "date"
-            },
-            {
-              "type": "integer",
-              "format": "unix-time"
-            }
-          ]
-        },
-        "endDate": {
-          "anyOf": [
-            {
-              "type": "string",
-              "format": "date-time"
-            },
-            {
-              "type": "string",
-              "format": "date"
-            },
-            {
-              "type": "integer",
-              "format": "unix-time"
-            }
-          ]
-        },
-        "preview": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string",
-          "enum": [
-            "news",
-            "event"
-          ],
-          "default": "news"
-        },
-        "location": {
-          "type": "string"
-        },
-        "display": {
-          "type": "string",
-          "enum": [
-            "modal",
-            "page"
-          ],
-          "default": "page"
-        },
-        "color": {
-          "type": "string",
-          "enum": [
-            "moss",
-            "sage",
-            "gold"
-          ],
-          "default": "moss"
-        },
-        "pdfs": {
-          "type": "object",
-          "properties": {
-            "de": {
-              "type": "string"
-            },
-            "en": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        },
-        "$schema": {
+        "en": {
           "type": "string"
         }
-      },
-      "required": [
-        "title",
-        "date"
-      ],
-      "additionalProperties": false
+      }
+    },
+    "$schema": {
+      "type": "string"
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "required": [
+    "title",
+    "date"
+  ]
 }
